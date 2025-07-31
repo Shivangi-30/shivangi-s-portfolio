@@ -12,52 +12,103 @@
       background: linear-gradient(to bottom right, #0f2027, #203a43, #2c5364);
       color: #fff;
       font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+      font-size: 1rem;
     }
+
+    @media (max-width: 576px) {
+      body {
+        font-size: 0.95rem;
+      }
+    }
+
+    img {
+      max-width: 100%;
+      height: auto;
+    }
+
     .navbar {
       background: linear-gradient(90deg, #00dbde, #fc00ff);
     }
+
     .navbar .nav-link {
       color: white;
       font-weight: 500;
     }
+
     .navbar .nav-link:hover {
       color: #000;
     }
+
+    .navbar-toggler {
+      border-color: #fff;
+    }
+
+    .navbar-toggler-icon {
+      background-image: url("data:image/svg+xml;charset=utf8,%3Csvg viewBox='0 0 30 30' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath stroke='rgba%28255, 255, 255, 1%29' stroke-width='2' stroke-linecap='round' stroke-miterlimit='10' d='M4 7h22M4 15h22M4 23h22'/%3E%3C/svg%3E");
+    }
+
     #hero {
       background: linear-gradient(to right, #1f1c2c, #928dab);
       text-shadow: 1px 1px 4px rgba(0, 0, 0, 0.6);
     }
+
     #hero .btn-primary {
       background: linear-gradient(45deg, #00dbde, #fc00ff);
       border: none;
     }
+
     .card {
       background: #1c1c1c;
       color: #fff;
       border: none;
       transition: transform 0.3s;
     }
+
     .card:hover {
       transform: translateY(-5px);
     }
+
     .card h5 {
       color: #00f2fe;
     }
+
     .btn-outline-dark {
       border-color: #00f2fe;
       color: #00f2fe;
     }
+
     .btn-outline-dark:hover {
       background-color: #00f2fe;
       color: #000;
     }
+
     footer {
       background: #111;
     }
+
     section h2 {
       color: #00f2fe;
     }
-    
+
+    .card-img-top {
+      object-fit: cover;
+      height: 200px;
+    }
+
+    @media (max-width: 768px) {
+      #hero {
+        padding-top: 100px;
+        padding-bottom: 100px;
+      }
+
+      #hero h1 {
+        font-size: 2rem;
+      }
+
+      #hero .lead {
+        font-size: 1rem;
+      }
+    }
   </style>
 </head>
 <body>
@@ -82,7 +133,7 @@
 </nav>
 
 <!-- Hero Section -->
-<section id="hero" class="vh-100 d-flex align-items-center justify-content-center text-center" data-aos="fade-up">
+<section id="hero" class="min-vh-100 d-flex align-items-center justify-content-center text-center px-3" data-aos="fade-up">
   <div>
     <h1 class="display-4 fw-bold">Hi, I'm Shivangi Gupta</h1>
     <p class="lead">Frontend Developer | WordPress Expert | UI/UX Designer</p>
@@ -92,11 +143,8 @@
   </div>
 </section>
 
-<!-- The rest of the content remains the same, only design was changed -->
-
-
 <!-- About -->
-<section id="about" class="py-5" style="background-color: #ffffff;">
+<section id="about" class="py-5 bg-white">
   <div class="container">
     <div class="row justify-content-center text-center">
       <div class="col-md-8" data-aos="fade-up">
@@ -110,85 +158,75 @@
     </div>
   </div>
 </section>
-
-
-
-<!-- Experience Section -->
+<!--experience-->
 <section id="experience" class="py-5">
   <div class="container">
-    <h2 class="text-center mb-5" style="color: #00f2fe;" data-aos="zoom-in">Experience</h2>
-    <div class="position-relative">
+    <h2 class="text-center mb-5" data-aos="zoom-in">Experience</h2>
+    <div class="row g-4">
+      <div class="col-12 col-md-6" data-aos="fade-right">
+        <div class="bg-dark text-white p-4 rounded shadow h-100 border-start border-4 border-info">
+          <h5 class="fw-bold">Frontend Developer — GeoGo Infotech</h5>
+          <p class="fst-italic">Sep 2023 - Present</p>
+          <p><strong>Technologies:</strong> JavaScript, HTML/CSS, Bootstrap, SEO, WordPress</p>
+          <ul>
+            <li>Spearheaded the frontend development and maintenance of the <strong>ChikuCab</strong> project.</li>
+  <li>Developed and customized responsive WordPress themes with performance and SEO in mind.</li>
+  <li>Implemented on-page SEO strategies including schema markup, meta optimization, and keyword structure.</li>
+  <li>Led UI/UX enhancements for mobile-first design and cross-browser compatibility.</li>
+  <!-- <li>Collaborated with backend developers to ensure seamless API integration and optimized content delivery.</li> -->
+          </ul>
 
-      <!-- Left card -->
-      <div class="bg-dark text-white p-4 rounded shadow mb-4 position-relative" style="border-left: 4px solid #00f2fe; max-width: 600px;">
-        <h5 class="fw-bold">Frontend Developer — GeoGo Infotech</h5>
-        <p class="fst-italic">Sep 2023 - Present</p>
-        <p><strong>Technologies:</strong> JavaScript, HTML/CSS, Bootstrap, SEO</p>
-        <ul>
-          <li>Leading the development and management of the ChikuCab project, enhancing functionality and UX.</li>
-          <li>Spearheaded on-page SEO, including meta descriptions and schema markup.</li>
-          <li>Collaborated with teams for smooth project delivery and business alignment.</li>
-          <li>Developed responsive, cross-browser web apps using HTML, CSS, JS.</li>
-          <li>Contributed to documentation and UI/UX improvements.</li>
-        </ul>
-        <div class="position-absolute top-50 translate-middle-y" style="right: -20px; color: #00f2fe; font-size: 1.5rem;">
-          <i class="fas fa-arrow-right"></i>
         </div>
       </div>
-
-      <!-- Vertical timeline line -->
-      <div class="position-absolute top-0 start-50 translate-middle-x" style="height: 100%; width: 4px; background: #00f2fe;"></div>
-
-      <!-- Right card -->
-      <div class="bg-dark text-white p-4 rounded shadow mt-4 position-relative ms-auto" style="border-right: 4px solid #00f2fe; max-width: 600px;">
-        <h5 class="fw-bold">Key Roles & Achievements</h5>
-        <p class="fst-italic">Highlights</p>
-        <ul>
-          <li>Enhanced site load time and improved Lighthouse scores for performance.</li>
-          <li>Integrated SEO best practices resulting in increased organic traffic.</li>
-          <li>Provided UI improvements that led to higher user engagement.</li>
-          <li>Managed client feedback loops efficiently with agile delivery.</li>
-        </ul>
-        <div class="position-absolute top-50 translate-middle-y" style="left: -20px; color: #00f2fe; font-size: 1.5rem;">
-          <i class="fas fa-arrow-left"></i>
+      <div class="col-12 col-md-6" data-aos="fade-left">
+        <div class="bg-dark text-white p-4 rounded shadow h-100 border-start border-4 border-info">
+          <h5 class="fw-bold">Key Roles & Achievements</h5>
+          <p class="fst-italic">Highlights</p>
+          <ul>
+             <li>Developed <strong>SEO-optimized</strong> WordPress websites improving visibility and organic traffic.</li>
+  
+  <li>Maintained responsive layouts with clean semantic structure and modular CSS.</li>
+  <li>Worked in an <strong>Agile environment</strong>, effectively managing sprints, client feedback, and delivery timelines.</li>
+  <li>Improved site structure, content hierarchy, and internal linking for better user engagement and crawlability.</li>
+          </ul>
         </div>
       </div>
-
     </div>
   </div>
 </section>
 
+
 <!-- Services -->
-<section id="services" class="bg-light py-5">
+<section id="services" class="bg-light py-5 text-dark">
   <div class="container text-center">
     <h2 class="mb-4" data-aos="zoom-in">My Services</h2>
-    <div class="row g-4">
-      <div class="col-md-3" data-aos="fade-up" data-aos-delay="100">
+    <div class="row row-cols-1 row-cols-md-4 g-4">
+      <div class="col" data-aos="fade-up" data-aos-delay="100">
         <div class="card p-3">
           <i class="fa fa-laptop-code fa-2x mb-2"></i>
           <h5>Frontend Development</h5>
           <p>Clean, scalable HTML, CSS, JavaScript and Bootstrap code.</p>
         </div>
       </div>
-      <div class="col-md-3" data-aos="fade-up" data-aos-delay="200">
+      <div class="col" data-aos="fade-up" data-aos-delay="200">
         <div class="card p-3">
           <i class="fab fa-wordpress fa-2x mb-2"></i>
           <h5>WordPress Development</h5>
           <p>Custom themes, Elementor, plugins, & SEO-optimized builds.</p>
         </div>
       </div>
-      <div class="col-md-3" data-aos="fade-up" data-aos-delay="300">
+      <div class="col" data-aos="fade-up" data-aos-delay="300">
         <div class="card p-3">
           <i class="fa fa-pen-nib fa-2x mb-2"></i>
           <h5>UI/UX Design</h5>
-          <p>Creating seamless user flows with modern, aesthetic design.</p>
+          <p>Seamless user flows with modern, aesthetic design.</p>
         </div>
       </div>
-      <div class="col-md-3" data-aos="fade-up" data-aos-delay="400">
+      <div class="col" data-aos="fade-up" data-aos-delay="400">
         <div class="card p-3">
           <i class="fa fa-search fa-2x mb-2"></i>
           <h5>SEO Optimization</h5>
-          <p>Performance, technical SEO, Core Web Vitals improvements.</p>
+          <p>Performance, Core Web Vitals & technical SEO.</p>
         </div>
       </div>
     </div>
@@ -198,61 +236,50 @@
 <!-- Projects -->
 <section id="projects" class="container py-5">
   <h2 class="text-center mb-5" data-aos="fade-down">Featured Projects</h2>
-  <div class="row g-4">
-    <div class="col-md-6" data-aos="flip-left">
+  <div class="row row-cols-1 row-cols-md-2 g-4">
+    <div class="col" data-aos="flip-left">
       <div class="card h-100 shadow">
-        <img src="hire-driver.png" class="card-img-top" alt="Hire Driver Project">
+        <img src="hire-driver.png" class="card-img-top img-fluid" alt="Hire Driver Project">
         <div class="card-body">
           <h5 class="card-title">HirePermanentDriver.com</h5>
-          <p class="card-text">Driver hiring platform with booking & responsive design.</p>
+          <p class="card-text">Driver booking platform with responsive UI, seamless UX, and easy scheduling for permanent driver services.</p>
           <a href="https://hirepermanentdriver.com" class="btn btn-outline-dark" target="_blank">Visit</a>
         </div>
       </div>
     </div>
-     <div class="col-md-6" data-aos="flip-left">
+    <div class="col" data-aos="flip-left">
       <div class="card h-100 shadow">
-        <img src="chikucab.png" class="card-img-top" alt="Chiku cab Project">
+        <img src="chikucab.png" class="card-img-top img-fluid" alt="Chiku cab Project">
         <div class="card-body">
           <h5 class="card-title">Chikucab.com</h5>
-           <p class="card-text">Travel booking system built using WordPress and Elementor.</p>
+          <p class="card-text">Cab booking website built with HTML, CSS, and JavaScript; supports local, airport, and outstation travel.</p>
           <a href="https://chikucab.com/" class="btn btn-outline-dark" target="_blank">Visit</a>
         </div>
       </div>
     </div>
-  </div>
-</section>
-<section id="projects" class="container py-5">
-  <div class="row g-4">
-
-    <div class="col-md-6" data-aos="flip-left">
+    <div class="col" data-aos="flip-right">
       <div class="card h-100 shadow">
-        <img src="taxiyatri.com.png" class="card-img-top" alt="TaxiYatri Project">
+        <img src="taxiyatri.com.png" class="card-img-top img-fluid" alt="TaxiYatri Project">
         <div class="card-body">
           <h5 class="card-title">TaxiYatri.com</h5>
-          <p class="card-text">A professional driver hiring and cab booking platform with a fully responsive user interface and seamless booking experience.</p>
+          <p class="card-text">Cab booking platform offering outstation, one-way, local rides with responsive design and SEO optimization.</p>
           <a href="https://www.taxiyatri.com/" class="btn btn-outline-dark" target="_blank">Visit</a>
         </div>
       </div>
     </div>
-
-    <div class="col-md-6" data-aos="flip-right">
+    <div class="col" data-aos="flip-right">
       <div class="card h-100 shadow">
-        <img src="tempotravellerinlucknow.png" class="card-img-top" alt="Tempo Traveller in Lucknow">
+        <img src="tempotravellerinlucknow.png" class="card-img-top img-fluid" alt="Tempo Traveller">
         <div class="card-body">
           <h5 class="card-title">TempoTravellerInLucknow.com</h5>
-          <p class="card-text">A custom-built travel booking website developed using WordPress and Elementor, optimized for user-friendly navigation and responsive design.</p>
+          <p class="card-text">Travel booking site for Tempo Travellers with clean UI, WordPress design, and mobile responsiveness.</p>
           <a href="https://tempotravellerinlucknow.com/" class="btn btn-outline-dark" target="_blank">Visit</a>
         </div>
       </div>
     </div>
-
-  </div>
-</section>
-<section id="projects" class="container py-5">
-  <div class="row g-4">
- <div class="col-md-6" data-aos="flip-right">
+    <div class="col" data-aos="flip-right">
       <div class="card h-100 shadow">
-        <img src="chiku cabs.png" class="card-img-top" alt="Chiku Cabs">
+       <img src="chiku cabs.png" class="card-img-top" alt="Chiku Cabs">
         <div class="card-body">
           <h5 class="card-title">ChikuCabs.com</h5>
           <p class="card-text">Travel booking system built using WordPress and Elementor.</p>
@@ -260,9 +287,7 @@
         </div>
       </div>
     </div>
-   
-
-    <div class="col-md-6" data-aos="flip-right">
+    <div class="col" data-aos="flip-right">
       <div class="card h-100 shadow">
         <img src="geogoinfotech.com.png" class="card-img-top" alt="Tempo Traveller in Lucknow">
         <div class="card-body">
@@ -272,11 +297,11 @@
         </div>
       </div>
     </div>
-
   </div>
 </section>
+
 <!-- Contact -->
-<section id="contact" class="bg-dark text-white py-5 text-center" data-aos="zoom-in-up">
+<section id="contact" class="bg-dark text-white py-5 text-center px-3" data-aos="zoom-in-up">
   <div class="container">
     <h2 class="mb-4">Contact Me</h2>
     <p><i class="fa fa-envelope"></i> <a href="mailto:shivangigupta2755@gmail.com" class="text-white">shivangigupta2755@gmail.com</a></p>
