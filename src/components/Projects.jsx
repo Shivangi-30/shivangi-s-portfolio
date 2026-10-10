@@ -82,6 +82,26 @@ const projects = [
     accent: 'from-purple-500/20 to-blue-500/5',
     link: 'https://geogoinfotech.com/',
   },
+  {
+  number: '07',
+  title: 'Project Management SaaS',
+  domain: 'shivangi-project-management.vercel.app',
+  category: 'Full-Stack Web Application',
+  description:
+    'A project and task management application built with Next.js and MongoDB, featuring user authentication, project management, task tracking, and dashboard functionality.',
+  technologies: [
+    'Next.js',
+    'React',
+    'MongoDB',
+    'Mongoose',
+    'API Routes',
+    'Authentication',
+    'Tailwind CSS',
+  ],
+  icon: Layers3,
+  accent: 'from-violet-500/20 to-indigo-500/5',
+  link: 'https://shivangi-project-management.vercel.app/dashboard',
+},
 ]
 
 function ProjectCard({ project }) {
@@ -197,7 +217,9 @@ export default function Projects() {
             </div>
 
             <div>
-              <p className="text-xl font-bold text-white">06</p>
+             <p className="text-xl font-bold text-white">
+  {String(projects.length).padStart(2, '0')}
+</p>
               <p className="text-xs text-gray-400">Featured Projects</p>
             </div>
           </div>
