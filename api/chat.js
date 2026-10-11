@@ -1,20 +1,14 @@
 
-import OpenAI from "openai";
-
-const client = new OpenAI({
-  apiKey: process.env.OPENAI_API_KEY,
-});
+import { GoogleGenerativeAI } from "@google/generative-ai";
 
 export default async function handler(req, res) {
   if (req.method !== "POST") {
-    return res.status(405).json({
-      error: "Method not allowed",
-    });
+    return res.status(405).json({ error: "Method not allowed" });
   }
 
-  if (!process.env.OPENAI_API_KEY) {
+  if (!process.env.GEMINI_API_KEY) {
     return res.status(500).json({
-      error: "AI service is not configured",
+      error: "Gemini API is not configured",
     });
   }
 
@@ -33,28 +27,28 @@ export default async function handler(req, res) {
       });
     }
 
-    const response = await client.responses.create({
-      model: "gpt-4.1-mini",
-      instructions: `
-        You are Shivangi Gupta's portfolio AI assistant.
-        Answer recruiters' questions about her portfolio,
-        frontend development, React, Next.js, PHP, MySQL,
-        WordPress, and SEO skills.
+    const genAI = new GoogleGenerativeAI(
+      process.env.GEMINI_API_KEY
+    );
 
+    const model = genAI.getGenerativeModel({
+      model: "gemini-2.5-flash",
+      systemInstruction: `
+        You are Shivangi Gupta's portfolio AI assistant.
+        Answer questions about her portfolio, projects, frontend development,
+        React, Next.js, PHP, MySQL, WordPress, and SEO skills.
         Be friendly, professional, and concise.
-        Never invent work experience, qualifications,
-        achievements, or project details.
+        Never invent experience or qualifications.
         If information is unavailable, say so clearly.
       `,
-      input: message.trim(),
-      max_output_tokens: 300,
     });
 
-    return res.status(200).json({
-      reply: response.output_text,
-    });
+    const result = await model.generateContent(message.trim());
+    const reply = result.response.text();
+
+    return res.status(200).json({ reply });
   } catch (error) {
-    console.error("AI API error:", error.message);
+    console.error("Gemini API error:", error.message);
 
     return res.status(500).json({
       error: "Unable to get an AI response. Please try again.",
