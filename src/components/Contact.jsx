@@ -11,13 +11,21 @@ const contactItems = [
     external: false,
   },
   {
-    title: 'LinkedIn',
-    description: 'Connect professionally',
-    detail: 'Visit my LinkedIn profile',
-    href: 'https://www.linkedin.com/',
-    icon: ArrowUpRight,
-    external: true,
-  },
+  title: 'LinkedIn',
+  description: 'Connect professionally',
+  detail: 'View my LinkedIn profile',
+  href: 'https://www.linkedin.com/in/shivangi-gupta-103753256/',
+  icon: ArrowUpRight,
+  external: true,
+},
+{
+  title: 'GitHub',
+  description: 'Explore my code and projects',
+  detail: 'Visit my GitHub profile',
+  href: 'https://github.com/Shivangi-30',
+  icon: ArrowUpRight,
+  external: true,
+},
   {
     title: 'Location',
     description: 'Based in',
@@ -86,9 +94,9 @@ export default function Contact() {
               </>
             )
 
-            const cardClass =
-              'group block h-full rounded-2xl border border-violet-400/15 bg-[#171324] p-6 transition duration-300 hover:-translate-y-1 hover:border-violet-400/40 hover:shadow-xl hover:shadow-violet-950/20 sm:p-7'
-
+            
+const cardClass =
+  'group block h-full rounded-2xl border border-violet-400/15 bg-[#171324] p-6 transition duration-300 hover:-translate-y-1 hover:border-violet-400/40 hover:shadow-xl hover:shadow-violet-950/20 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-violet-400 focus-visible:ring-offset-2 focus-visible:ring-offset-[#0B0914] sm:p-7'
             return item.href ? (
               <a
                 key={item.title}
