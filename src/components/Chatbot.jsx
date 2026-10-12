@@ -12,12 +12,12 @@ export default function Chatbot() {
       text: "Hi! 👋 I am Shivangi's AI assistant. Ask me about her projects and skills.",
     },
   ]);
-const suggestedQuestions = [
-  "Tell me about Shivangi",
-  "Show me her projects",
-  "What are her technical skills?",
-  "Tell me about her SEO experience",
-];
+  const suggestedQuestions = [
+    "Tell me about Shivangi",
+    "Show me her projects",
+    "What are her technical skills?",
+    "Tell me about her SEO experience",
+  ];
   async function handleSend(e) {
     e.preventDefault();
 
@@ -128,11 +128,10 @@ const suggestedQuestions = [
             {messages.map((item, index) => (
               <div
                 key={index}
-                className={`max-w-[85%] whitespace-pre-wrap break-words rounded-2xl px-3 py-2 text-sm ${
-                  item.role === "user"
+                className={`max-w-[85%] whitespace-pre-wrap break-words rounded-2xl px-3 py-2 text-sm ${item.role === "user"
                     ? "self-end rounded-br-sm bg-blue-600 text-white"
                     : "self-start rounded-bl-sm border border-gray-200 bg-white text-gray-800"
-                }`}
+                  }`}
               >
                 {item.text}
               </div>
@@ -158,8 +157,9 @@ const suggestedQuestions = [
               placeholder="Ask me something..."
               maxLength={1000}
               disabled={isLoading}
-              className="min-w-0 flex-1 rounded-xl border border-gray-300 px-3 py-2 text-sm outline-none focus:border-blue-500 focus:ring-2 focus:ring-blue-100 disabled:bg-gray-100"
-            />
+              
+className="min-w-0 flex-1 rounded-xl border border-gray-300 bg-white px-3 py-2 text-sm !text-gray-900 placeholder:text-gray-500 caret-blue-600 outline-none focus:border-blue-500 focus:ring-2 focus:ring-blue-100 disabled:bg-gray-100"/>
+
 
             <button
               type="submit"
