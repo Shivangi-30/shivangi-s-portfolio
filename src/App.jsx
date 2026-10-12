@@ -8,6 +8,7 @@ import Education from './components/Education.jsx'
 import Contact from './components/Contact.jsx'
 import Footer from './components/Footer.jsx'
 import CodeBackground from './components/CodeBackground.jsx'
+import Chatbot from "./components/Chatbot";
 
 export default function App() {
   return (
@@ -25,6 +26,7 @@ export default function App() {
           <Projects />
           <Education />
           <Contact />
+          <Chatbot />
         </main>
 
         <Footer />
