@@ -30,7 +30,7 @@ export default function Footer() {
         {/* Social links and back to top */}
         <div className="flex items-center gap-3">
           <a
-            href="https://github.com/"
+            href="https://github.com/Shivangi-30"
             target="_blank"
             rel="noopener noreferrer"
             aria-label="GitHub profile"
@@ -40,7 +40,7 @@ export default function Footer() {
           </a>
 
           <a
-            href="https://www.linkedin.com/"
+            href="https://www.linkedin.com/in/shivangi-gupta-103753256/"
             target="_blank"
             rel="noopener noreferrer"
             aria-label="LinkedIn profile"
