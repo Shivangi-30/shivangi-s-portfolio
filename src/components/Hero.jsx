@@ -7,7 +7,7 @@ import { motion, useReducedMotion } from 'motion/react'
 const roles = [
   'Frontend Developer',
   'React Developer',
-  'SEO Specialist',
+  
 ]
 
 function useTypingEffect() {
@@ -73,7 +73,7 @@ export default function Hero() {
         >
           <div className="mb-7 inline-flex items-center gap-2 rounded-full border border-violet-400/20 bg-violet-500/10 px-4 py-2 text-sm text-violet-200">
             <Sparkles size={16} className="text-violet-300" />
-            Frontend Developer &amp; SEO Specialist
+            Frontend Developer
           </div>
 
           <h1 className="text-5xl font-bold leading-tight tracking-tight sm:text-6xl xl:text-7xl">

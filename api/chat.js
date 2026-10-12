@@ -32,7 +32,7 @@ export default async function handler(req, res) {
     );
 
     const model = genAI.getGenerativeModel({
-      model: "gemini-3.8-flash",
+      model: "gemini-3.6-flash",
       systemInstruction: `
         You are Shivangi Gupta's portfolio AI assistant.
         Answer questions about her portfolio, projects, frontend development,
