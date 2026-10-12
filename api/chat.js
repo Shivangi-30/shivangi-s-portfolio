@@ -15,7 +15,7 @@ export default async function handler(req, res) {
   }
 
   try {
-    const { message } = req.body ?? {};
+    const { message, history } = req.body ?? {};
 
     if (typeof message !== "string" || !message.trim()) {
       return res.status(400).json({
@@ -28,7 +28,21 @@ export default async function handler(req, res) {
         error: "Message is too long",
       });
     }
-
+const validHistory = Array.isArray(history)
+  ? history
+      .filter(
+        (item) =>
+          item &&
+          ["user", "assistant"].includes(item.role) &&
+          typeof item.text === "string" &&
+          item.text.trim()
+      )
+      .slice(-10)
+      .map((item) => ({
+        role: item.role === "assistant" ? "model" : "user",
+        parts: [{ text: item.text.slice(0, 1000) }],
+      }))
+  : [];
     const genAI = new GoogleGenerativeAI(
       process.env.GEMINI_API_KEY
     );
@@ -79,10 +93,20 @@ STRICT ANSWERING RULES:
 - If a detail is unavailable, say it is not listed in the portfolio.
 - For unrelated questions, politely redirect the visitor to
   Shivangi's skills, projects or professional experience.
+  - Always use the conversation history to understand follow-up questions.
+- If the visitor says "it", "this project", "that project",
+  or asks a short follow-up, identify the relevant project
+  from the previous messages before answering.
+- Answer the specific question directly. Do not add unrelated
+  skills or technologies unless the visitor asks for them.
       `,
     });
 
-    const result = await model.generateContent(message.trim());
+  const chat = model.startChat({
+  history: validHistory,
+});
+
+const result = await chat.sendMessage(message.trim());
     const reply = result.response.text()?.trim();
 
     if (!reply) {
