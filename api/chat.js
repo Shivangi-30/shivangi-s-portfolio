@@ -48,7 +48,7 @@ const validHistory = Array.isArray(history)
     );
 
     const model = genAI.getGenerativeModel({
-      model: "gemini-3.6-flash",
+      model: "gemini-3.5-flash-lite",
       systemInstruction: `
 You are Shivangi Gupta's portfolio AI assistant.
 
@@ -106,7 +106,36 @@ STRICT ANSWERING RULES:
   history: validHistory,
 });
 
-const result = await chat.sendMessage(message.trim());
+
+
+let result;
+let lastError;
+
+for (let attempt = 0; attempt < 3; attempt++) {
+  try {
+    result = await chat.sendMessage(message.trim());
+    break;
+  } catch (error) {
+    lastError = error;
+
+    const isTemporaryError =
+      error?.status === 503 ||
+      error?.status === 429 ||
+      error?.message?.includes("fetch failed");
+
+    if (!isTemporaryError || attempt === 2) {
+      throw error;
+    }
+
+    const delay = 1000 * 2 ** attempt;
+    await new Promise((resolve) => setTimeout(resolve, delay));
+  }
+}
+
+if (!result) {
+  throw lastError || new Error("Gemini returned no result");
+}
+
     const reply = result.response.text()?.trim();
 
     if (!reply) {
@@ -127,11 +156,17 @@ const result = await chat.sendMessage(message.trim());
     return res.status(200).json({
       reply: cleanReply,
     });
-  } catch (error) {
-    console.error("Gemini API error:", error);
+  
+} catch (error) {
+  console.error("Full Gemini error:", error);
+  console.error("Gemini API error details:", {
+    message: error?.message,
+    status: error?.status,
+    statusText: error?.statusText,
+  });
 
-    return res.status(500).json({
-      error: "Unable to get an AI response. Please try again.",
-    });
-  }
+  return res.status(500).json({
+    error: "Unable to get an AI response. Please try again.",
+  });
+}
 }
