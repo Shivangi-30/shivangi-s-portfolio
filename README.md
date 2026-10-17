@@ -1,16 +1,108 @@
-# React + Vite
+# Shivangi Gupta — Developer Portfolio
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+A personal developer portfolio built with React, Vite, and Tailwind CSS to showcase my technical skills, professional experience, and web development projects.
 
-Currently, two official plugins are available:
+🌐 **Live Demo:** [shivangi-s-portfolio.vercel.app](https://shivangi-s-portfolio.vercel.app)
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react) uses [Oxc](https://oxc.rs)
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react-swc) uses [SWC](https://swc.rs/)
+## About
 
-## React Compiler
+Hi, I'm Shivangi Gupta, a Frontend Developer interested in building responsive, user-friendly, and SEO-friendly web experiences.
 
-The React Compiler is not enabled on this template because of its impact on dev & build performances. To add it, see [this documentation](https://react.dev/learn/react-compiler/installation).
+My work includes frontend development, WordPress websites, and technical and on-page SEO. I'm also developing my skills in React.js and Next.js.
 
-## Expanding the ESLint configuration
+## Features
 
-If you are developing a production application, we recommend using TypeScript with type-aware lint rules enabled. Check out the [TS template](https://github.com/vitejs/vite/tree/main/packages/create-vite/template-react-ts) for information on how to integrate TypeScript and [`typescript-eslint`](https://typescript-eslint.io) in your project.
+- Responsive portfolio layout for desktop and mobile devices
+- Introduction and professional summary
+- Technical skills and work experience sections
+- Education and project showcase
+- Contact and professional profile links
+- Modern UI built with reusable React components
+
+## Tech Stack
+
+- **Frontend:** React.js, JavaScript, HTML5, CSS3
+- **Styling:** Tailwind CSS
+- **Build Tool:** Vite
+- **Icons:** Lucide React
+- **Deployment:** Vercel
+- **Version Control:** Git and GitHub
+
+## Featured Projects
+
+### 1. Chiku Cab
+Frontend development work for a cab booking website.
+
+**Technologies:** HTML, CSS, JavaScript
+
+### 2. Hire Permanent Driver
+A WordPress website project.
+
+**Technologies:** WordPress
+
+### 3. TaxiYatri
+A website project involving dynamic web development.
+
+**Technologies:** PHP, MySQL
+
+### 4. Tempo Traveller in Lucknow
+A WordPress website project.
+
+**Technologies:** WordPress
+
+### 5. Geo Go Infotech
+Website development work.
+
+**Technologies:** HTML, CSS, JavaScript
+
+## Run Locally
+
+Follow these steps to run the portfolio on your computer.
+
+### Prerequisites
+
+- Node.js
+- npm
+- Git
+
+### Installation
+
+1. Clone the repository:
+
+   ```bash
+   git clone https://github.com/Shivangi-30/shivangi-s-portfolio.git
+   ```
+
+2. Open the project directory:
+
+   ```bash
+   cd shivangi-s-portfolio
+   ```
+
+3. Install dependencies:
+
+   ```bash
+   npm install
+   ```
+
+4. Start the development server:
+
+   ```bash
+   npm run dev
+   ```
+
+5. Open the local URL shown in your terminal, usually `http://localhost:5173`.
+
+## Screenshots
+
+Portfolio screenshots can be added here to provide a quick preview of the interface.
+
+## Connect With Me
+
+- **GitHub:** [Shivangi-30](https://github.com/Shivangi-30)
+- **LinkedIn:** [Shivangi Gupta](https://www.linkedin.com/in/shivangi-gupta-103753256/)
+- **Portfolio:** [Live Website](https://shivangi-s-portfolio.vercel.app)
+
+---
+
+⭐ If you find this project useful, feel free to explore the repository and the live demo.
